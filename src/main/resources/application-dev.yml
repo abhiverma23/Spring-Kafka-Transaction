@@ -1,0 +1,22 @@
+spring:
+  kafka:
+    bootstrap-servers: ubuntu_machine:9092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.IntegerSerializer
+      value-serializer: com.example.demo.serdes.JsonSerializer
+  datasource:
+    url: jdbc:mysql://192.168.40.221:1002/deleteme
+    username: root
+    password: root
+    dbcp2:
+      validation-query: SELECT 1
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: validate
+      naming:
+        strategy: org.hibernate.cfg.ImprovedNamingStrategy
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
